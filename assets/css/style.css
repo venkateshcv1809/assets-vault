@@ -1,0 +1,132 @@
+/* ==========================================================
+ * Reset
+ * ========================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+}
+
+/* ==========================================================
+ * Base
+ * ========================================================== */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family:
+        Inter,
+        system-ui,
+        sans-serif;
+
+    color: #e5e7eb;
+    background: #111827;
+}
+
+/* ==========================================================
+ * Layout
+ * ========================================================== */
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.app-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    height: 4rem;
+    padding: 0 1.5rem;
+
+    border-bottom: 1px solid #374151;
+}
+
+.app-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.app-search {
+    margin-left: auto;
+
+    width: 20rem;
+    max-width: 100%;
+}
+
+.app-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 360px;
+
+    flex: 1;
+    min-height: 0;
+}
+
+.app-sidebar {
+    overflow-y: auto;
+
+    border-right: 1px solid #374151;
+}
+
+.app-explorer {
+    overflow-y: auto;
+}
+
+.app-preview {
+    overflow-y: auto;
+
+    border-left: 1px solid #374151;
+}
+
+/* ==========================================================
+ * Sidebar
+ * ========================================================== */
+
+.sidebar-navigation {
+    display: flex;
+    flex-direction: column;
+
+    padding: 1rem;
+    gap: 0.5rem;
+}
+
+/* ==========================================================
+ * Explorer
+ * ========================================================== */
+
+.explorer-content {
+    padding: 1.5rem;
+}
+
+/* ==========================================================
+ * Preview
+ * ========================================================== */
+
+.preview-content {
+    padding: 1.5rem;
+}
+
+/* ==========================================================
+ * Accessibility
+ * ========================================================== */
+
+.visually-hidden {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    overflow: hidden;
+
+    clip: rect(0, 0, 0, 0);
+
+    white-space: nowrap;
+}
