@@ -1,120 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8" />
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
 
     <title>Assets Vault</title>
 
-    <link
-        rel="icon"
-        href="assets/favicon/favicon.ico"
-        sizes="any">
+    <link rel="icon" href="assets/favicon/favicon.ico" sizes="any" />
+    <link rel="stylesheet" href="assets/css/style.css" />
 
-    <link
-        rel="stylesheet"
-        href="assets/css/style.css" />
-
-    <script
-        defer
-        src="assets/js/main.js"></script>
-
+    <script type="module" src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"></script>
+    <script type="module" src="assets/js/main.js"></script>
 </head>
 
 <body>
-
     <header class="app-header">
+        <h1 class="app-title">Assets Vault</h1>
 
-        <h1 class="app-title">
-            Assets Vault
-        </h1>
-
-        <input
-            class="app-search"
-            type="search"
-            placeholder="Search assets..."
-            autocomplete="off" />
-
+        <input id="search" class="app-search" type="search" placeholder="Search assets..." autocomplete="off"
+            spellcheck="false" aria-label="Search assets" />
     </header>
 
     <main class="app-layout">
-
         <aside class="app-sidebar">
-
-            <nav
-                class="sidebar-navigation"
-                aria-label="Asset Categories">
-
-                <button
-                    class="sidebar-item is-active"
-                    type="button">
-                    Emoji
-                </button>
-
-                <button
-                    class="sidebar-item"
-                    type="button">
-                    Icons
-                </button>
-
-                <button
-                    class="sidebar-item"
-                    type="button">
-                    Fonts
-                </button>
-
-                <button
-                    class="sidebar-item"
-                    type="button">
-                    Logos
-                </button>
-
-            </nav>
-
+            <nav id="sidebar" class="sidebar-navigation" aria-label="Asset categories"></nav>
         </aside>
 
-        <section
-            class="app-explorer"
-            aria-labelledby="explorer-heading">
-
-            <h2
-                id="explorer-heading"
-                class="visually-hidden">
-                Asset Explorer
-            </h2>
-
-            <div class="explorer-content">
-
-                <!-- Asset list goes here -->
-
-            </div>
-
+        <section class="app-explorer" aria-labelledby="explorer-heading">
+            <h2 id="explorer-heading" class="visually-hidden">Asset Explorer</h2>
+            <div id="asset-grid" class="explorer-content"></div>
         </section>
 
-        <aside
-            class="app-preview"
-            aria-labelledby="preview-heading">
-
-            <h2
-                id="preview-heading"
-                class="visually-hidden">
-                Preview
-            </h2>
-
-            <div class="preview-content">
-
-                <!-- Asset preview goes here -->
-
-            </div>
-
+        <aside class="app-preview" aria-labelledby="preview-heading">
+            <h2 id="preview-heading" class="visually-hidden">Asset Preview</h2>
+            <div id="asset-preview" class="preview-content"></div>
         </aside>
-
     </main>
-
 </body>
 
 </html>
