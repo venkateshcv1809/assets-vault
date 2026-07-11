@@ -17,7 +17,7 @@
             "id": "fonts",
             "name": "Fonts",
             "supported": true,
-            "count": 0
+            "count": 5
         },
         {
             "id": "icons",
@@ -8085,6 +8085,71 @@
             "metadata": {
                 "size": 375,
                 "modified": 1783768723
+            }
+        },
+        {
+            "id": "fonts/MesloLGSNerdFont/LICENSE",
+            "name": "LICENSE",
+            "category": "fonts",
+            "source": "MesloLGSNerdFont",
+            "path": "vault/fonts/MesloLGSNerdFont/LICENSE.txt",
+            "extension": ".txt",
+            "renderer": "generic",
+            "metadata": {
+                "size": 573,
+                "modified": 1783769044
+            }
+        },
+        {
+            "id": "fonts/MesloLGSNerdFont/MesloLGSNerdFont-Bold",
+            "name": "MesloLGSNerdFont-Bold",
+            "category": "fonts",
+            "source": "MesloLGSNerdFont",
+            "path": "vault/fonts/MesloLGSNerdFont/MesloLGSNerdFont-Bold.ttf",
+            "extension": ".ttf",
+            "renderer": "font",
+            "metadata": {
+                "size": 2870436,
+                "modified": 1783769044
+            }
+        },
+        {
+            "id": "fonts/MesloLGSNerdFont/MesloLGSNerdFont-BoldItalic",
+            "name": "MesloLGSNerdFont-BoldItalic",
+            "category": "fonts",
+            "source": "MesloLGSNerdFont",
+            "path": "vault/fonts/MesloLGSNerdFont/MesloLGSNerdFont-BoldItalic.ttf",
+            "extension": ".ttf",
+            "renderer": "font",
+            "metadata": {
+                "size": 2828396,
+                "modified": 1783769044
+            }
+        },
+        {
+            "id": "fonts/MesloLGSNerdFont/MesloLGSNerdFont-Italic",
+            "name": "MesloLGSNerdFont-Italic",
+            "category": "fonts",
+            "source": "MesloLGSNerdFont",
+            "path": "vault/fonts/MesloLGSNerdFont/MesloLGSNerdFont-Italic.ttf",
+            "extension": ".ttf",
+            "renderer": "font",
+            "metadata": {
+                "size": 2812072,
+                "modified": 1783769044
+            }
+        },
+        {
+            "id": "fonts/MesloLGSNerdFont/MesloLGSNerdFont-Regular",
+            "name": "MesloLGSNerdFont-Regular",
+            "category": "fonts",
+            "source": "MesloLGSNerdFont",
+            "path": "vault/fonts/MesloLGSNerdFont/MesloLGSNerdFont-Regular.ttf",
+            "extension": ".ttf",
+            "renderer": "font",
+            "metadata": {
+                "size": 2853324,
+                "modified": 1783769044
             }
         }
     ]
