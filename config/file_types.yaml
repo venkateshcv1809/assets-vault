@@ -1,0 +1,39 @@
+file_types:
+    ".json":
+        renderer: lottie
+
+    ".svg":
+        renderer: svg
+
+    ".ico":
+        renderer: image
+
+    ".png":
+        renderer: image
+
+    ".jpg":
+        renderer: image
+
+    ".jpeg":
+        renderer: image
+
+    ".webp":
+        renderer: image
+
+    ".gif":
+        renderer: image
+
+    ".ttf":
+        renderer: font
+
+    ".otf":
+        renderer: font
+
+    ".woff":
+        renderer: font
+
+    ".woff2":
+        renderer: font
+
+default:
+    renderer: generic

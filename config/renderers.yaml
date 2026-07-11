@@ -1,0 +1,25 @@
+renderers:
+    generic:
+        preview: false
+        thumbnail: false
+        metadata: false
+
+    image:
+        preview: true
+        thumbnail: true
+        metadata: true
+
+    svg:
+        preview: true
+        thumbnail: true
+        metadata: true
+
+    lottie:
+        preview: true
+        thumbnail: false
+        metadata: true
+
+    font:
+        preview: true
+        thumbnail: false
+        metadata: true
