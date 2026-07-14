@@ -17,6 +17,10 @@
 
 <body>
     <header class="app-header">
+        <button id="sidebar-toggle" class="sidebar-toggle" type="button" aria-label="Toggle categories">
+            ☰
+        </button>
+
         <h1 class="app-title">Assets Vault</h1>
 
         <input id="search" class="app-search" type="search" placeholder="Search assets..." autocomplete="off"
@@ -24,17 +28,16 @@
     </header>
 
     <main class="app-layout">
-        <aside class="app-sidebar">
+        <aside id="sidebar-panel" class="app-sidebar">
             <nav id="sidebar" class="sidebar-navigation" aria-label="Asset categories"></nav>
         </aside>
 
-        <section class="app-explorer" aria-labelledby="explorer-heading">
-            <h2 id="explorer-heading" class="visually-hidden">Asset Explorer</h2>
+        <section class="app-explorer" aria-label="Asset Explorer">
             <div id="asset-grid" class="explorer-content"></div>
+            <nav id="pagination" class="pagination" aria-label="Pagination"></nav>
         </section>
 
-        <aside class="app-preview" aria-labelledby="preview-heading">
-            <h2 id="preview-heading" class="visually-hidden">Asset Preview</h2>
+        <aside class="app-preview" aria-label="Asset Preview">
             <div id="asset-preview" class="preview-content"></div>
         </aside>
     </main>

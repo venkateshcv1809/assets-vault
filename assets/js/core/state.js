@@ -3,6 +3,8 @@ const state = {
     selectedCategory: null,
     selectedAsset: null,
     searchQuery: "",
+    currentPage: 1,
+    pageSize: 50,
 };
 
 function resetState() {

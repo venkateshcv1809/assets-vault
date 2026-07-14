@@ -1,23 +1,24 @@
 import { state } from "../core/state.js";
+import { updateRoute } from "../core/router.js";
 import { renderAsset } from "./renderers.js";
 
 export function renderPreview() {
     const previewContainer = document.getElementById("asset-preview");
+    const panel = document.querySelector(".app-preview");
     previewContainer.replaceChildren();
-
     if (!state.selectedAsset) {
+        panel.classList.remove("is-open");
         previewContainer.appendChild(createEmptyPreview());
+        updateRoute();
         return;
+    } else {
+        panel.classList.add("is-open");
     }
 
+    updateRoute();
     const container = document.createElement("div");
     container.className = "preview";
-
-    const viewer = document.createElement("section");
-    viewer.className = "preview-viewer";
-    viewer.appendChild(renderAsset(state.selectedAsset));
-
-    container.appendChild(viewer);
+    container.appendChild(renderAsset(state.selectedAsset));
     container.appendChild(createInformation(state.selectedAsset));
     previewContainer.appendChild(container);
 }

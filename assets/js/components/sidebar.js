@@ -1,9 +1,8 @@
 import {
     state,
-    setSelectedAsset,
-    setSelectedCategory,
 } from "../core/state.js";
 import { render } from "../main.js";
+import { updateRoute } from "../core/router.js";
 
 export function renderSidebar() {
     const sidebar = document.getElementById("sidebar");
@@ -35,8 +34,13 @@ function createButton(label, category, active) {
     button.classList.toggle("is-active", active);
 
     button.addEventListener("click", () => {
-        setSelectedCategory(category);
-        setSelectedAsset(null);
+        state.selectedCategory = category;
+        state.selectedAsset = null;
+        document
+            .getElementById("sidebar-panel")
+            ?.classList.remove("is-open");
+        state.currentPage = 1;
+        updateRoute();
         render();
     });
 

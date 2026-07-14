@@ -3,6 +3,7 @@ import { loadCatalog } from "./core/api.js";
 import { initializeSearch } from "./components/search.js";
 import { renderSidebar } from "./components/sidebar.js";
 import { renderExplorer } from "./components/explorer.js";
+import { initializeMobile } from "./components/mobile.js";
 import { renderPreview } from "./components/preview.js";
 
 function render() {
@@ -26,6 +27,7 @@ async function initializeApplication() {
         const catalog = await loadCatalog();
         state.catalog = catalog;
         initializeSearch();
+        initializeMobile();
         render();
     } catch (error) {
         showError(error);

@@ -1,23 +1,49 @@
+import { updateRoute } from "../core/router.js";
 import {
     state,
     setSelectedAsset,
 } from "../core/state.js";
 import { render } from "../main.js";
+import { renderPagination } from "./pagination.js";
 import { renderAsset } from "./renderers.js";
 
-const PREVIEW_ICONS = {
-    image: "🖼",
-    svg: "⬢",
-    font: "Aa",
-    lottie: "😀",
-};
+function getAssets() {
+    let assets = state.catalog.assets;
+    if (state.selectedCategory) {
+        assets = assets.filter(asset =>
+            asset.category === state.selectedCategory
+        );
+    }
+
+    if (state.searchQuery) {
+        const query = state.searchQuery;
+        assets = assets.filter(asset =>
+            asset.name.toLowerCase().includes(query) ||
+            asset.source.toLowerCase().includes(query)
+        );
+    }
+    return assets;
+
+}
 
 export function renderExplorer() {
+    const assets = getAssets();
     const grid = document.getElementById("asset-grid");
     grid.replaceChildren();
-    for (const asset of getVisibleAssets()) {
+    const start = (state.currentPage - 1) * state.pageSize;
+
+    const visible = assets.slice(
+        start,
+        start + state.pageSize
+    );
+
+    for (const asset of visible) {
         grid.appendChild(createAssetCard(asset));
     }
+
+    renderPagination(
+        assets.length
+    );
 }
 
 function createAssetCard(asset) {
@@ -49,27 +75,9 @@ function createAssetCard(asset) {
 
     card.addEventListener("click", () => {
         setSelectedAsset(asset);
+        updateRoute();
         render();
     });
 
     return card;
-}
-
-function getVisibleAssets() {
-    let assets = state.catalog.assets;
-    if (state.selectedCategory) {
-        assets = assets.filter(
-            asset => asset.category === state.selectedCategory
-        );
-    }
-
-    if (state.searchQuery) {
-        const query = state.searchQuery;
-        assets = assets.filter(asset =>
-            asset.name.toLowerCase().includes(query) ||
-            asset.source.toLowerCase().includes(query)
-        );
-    }
-
-    return assets;
 }
